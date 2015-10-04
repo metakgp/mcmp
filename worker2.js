@@ -7,14 +7,8 @@ var fields = ['name', 'field'];
 onmessage = function(e) {
     if (e.data.type === 'data') {
         data = e.data.data;
-        for (var i = 0; i < data.length; ++i) {
-            for (var f = 0; f < fields.length; ++f) {
-                data[i][fields[f]] = data[i][fields[f]].toLowerCase();
-            }
-        }
     } else if (e.data.type === 'query') {
         var query = e.data.query;
-        query = query.toLowerCase();
         var terms = query.split(/\s+/);
         var fuzz = 0.3;
         console.log('got query: ', query);
