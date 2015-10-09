@@ -14,3 +14,5 @@ class ReverseItem(scrapy.Item):
     name = Field()
     title = Field()
     field = Field()
+    dept = Field()
+    year = Field()

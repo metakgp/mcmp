@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MySpider	rsspider.py	/^class MySpider(Spider):$/;"	c	language:Python
+allowed_domains	rsspider.py	/^    allowed_domains = ["www.iitkgp.ac.in"]$/;"	v	language:Python	class:MySpider
+items	rsspider.py	/^    items = []$/;"	v	language:Python	class:MySpider
+name	rsspider.py	/^    name = "reverse"$/;"	v	language:Python	class:MySpider
+parse	rsspider.py	/^    def parse(self, response):$/;"	m	language:Python	class:MySpider
+proflinks	rsspider.py	/^    proflinks = open("proflinks.pkl", 'rb')$/;"	v	language:Python	class:MySpider
+start_urls	rsspider.py	/^    start_urls = pickle.load(proflinks)$/;"	v	language:Python	class:MySpider

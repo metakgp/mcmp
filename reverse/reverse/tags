@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BOT_NAME	settings.py	/^BOT_NAME = 'reverse'$/;"	v	language:Python
+MySpider	spiders/rsspider.py	/^class MySpider(Spider):$/;"	c	language:Python
+NEWSPIDER_MODULE	settings.py	/^NEWSPIDER_MODULE = 'reverse.spiders'$/;"	v	language:Python
+ReverseItem	items.py	/^class ReverseItem(scrapy.Item):$/;"	c	language:Python
+ReversePipeline	pipelines.py	/^class ReversePipeline(object):$/;"	c	language:Python
+SPIDER_MODULES	settings.py	/^SPIDER_MODULES = ['reverse.spiders']$/;"	v	language:Python
+allowed_domains	spiders/rsspider.py	/^    allowed_domains = ["www.iitkgp.ac.in"]$/;"	v	language:Python	class:MySpider
+dept	items.py	/^    dept = Field()$/;"	v	language:Python	class:ReverseItem
+field	items.py	/^    field = Field()$/;"	v	language:Python	class:ReverseItem
+items	spiders/rsspider.py	/^    items = []$/;"	v	language:Python	class:MySpider
+name	items.py	/^    name = Field()$/;"	v	language:Python	class:ReverseItem
+name	spiders/rsspider.py	/^    name = "reverse"$/;"	v	language:Python	class:MySpider
+parse	spiders/rsspider.py	/^    def parse(self, response):$/;"	m	language:Python	class:MySpider
+process_item	pipelines.py	/^    def process_item(self, item, spider):$/;"	m	language:Python	class:ReversePipeline
+proflinks	spiders/rsspider.py	/^    proflinks = open("proflinks.pkl", 'rb')$/;"	v	language:Python	class:MySpider
+start_urls	spiders/rsspider.py	/^    start_urls = pickle.load(proflinks)$/;"	v	language:Python	class:MySpider
+title	items.py	/^    title = Field()$/;"	v	language:Python	class:ReverseItem
+year	items.py	/^    year = Field()$/;"	v	language:Python	class:ReverseItem
