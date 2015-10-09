@@ -9,6 +9,8 @@ import pickle
 """
 
 ### Scrapy code for scraping the list of all departments and schools :
+### Usage:
+### scrapy crawl reverse -o departments.json -t json
 
 class MySpider(Spider):
     name = "reverse"
@@ -29,6 +31,9 @@ class MySpider(Spider):
 """
 
 ### Scrapy code for scraping the list of all professors from various departments
+### Usage
+### scrapy crawl reverse -o professor.json -t json
+
 class MySpider(Spider):
     name = "reverse"
     allowed_domains = ["www.iitkgp.ac.in"]
@@ -50,6 +55,8 @@ class MySpider(Spider):
 """
 
 ### Scrapy code for scraping the research areas of the various professors
+### Usage :
+### scrapy crawl reverse -o research_areas.json -t json
 
 class MySpider(Spider):
     name = "reverse"
