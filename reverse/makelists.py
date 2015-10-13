@@ -27,7 +27,7 @@ def professor_list():
 
 ### 3. Generate the research area links
 def query_list():
-    with open('research_areas.json') as data_file:
+    with open('prof_details.json') as data_file:
         data = json.load(data_file)
     finallist = []
     for prof in data:
