@@ -50,8 +50,8 @@ is then used to create the fuzzy search, search box on `http://metakgp.github.io
 If you want to modify the web part checkout the `gh-pages` branch.
 
 
-Populating the wiki with json
------------------------------
+Populating the wiki with the data from json
+-------------------------------------------
 
 `prof_details.json` can also be used to automatically create pages of
 Professor on metakgp. `reverse/profjson_to_wikitext.py` creates a text file
