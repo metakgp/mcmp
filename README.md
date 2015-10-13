@@ -24,7 +24,7 @@ To get started :
 
 -> To run the crawler with spider-config as in rsspider.py and store data as json, use :
 ```
-  scrapy crawl reverse -o <corresponding json> -t json
+  scrapy crawl reverse -o prof_details.json -t json
 ```
 
 -> The python scripts to process the data are in makelists.py. Ensure Pickle is installed.
