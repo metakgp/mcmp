@@ -1,15 +1,18 @@
 My Choice My Prof
 =================
+Searching for professors from given fields is easier than you thought. Reverse search enables to find professors from the field, say you need a list of all the professors working in nanomaterials. What's next? Keep reading.
 
 The repository holds the source for the crawler to generate data for mcmp ``` Professor Reverse Search ```.
 
-Prerequisites :
-Install Scrapy. Follow [Scrapy Install](http://doc.scrapy.org/en/latest/intro/install.html).
+**Prerequisites :**
+Install `Scrapy`. Follow [Scrapy Install](http://doc.scrapy.org/en/latest/intro/install.html).
 ```
   pip install scrapy
 ```
 
-To get started :
+Get started :
+============
+
 
 * Clone the repo as :
 
@@ -24,37 +27,42 @@ git checkout source
 cd reverse
 ```
 
-* To run the crawler with spider-config as in rsspider.py and store data as json, use :
+* To run the crawler with spider-config as in `rsspider.py` and store data as json, use :
 ```
   scrapy crawl reverse -o prof_details.json -t json
 ```
 
-How to change mcmp?
--------------------
+Contributing to mcmp
+===============
+Please use [issues](https://github.com/metakgp/mcmp/issues) page to report any bugs or file feature requests.
 
-The item which `scrapy` will scrape for are written in
-`reverse/reverse/items.py` and the specific scraping logic is written in
-`reverse/reverse/spiders/rsspiders.py`
 
-The current `prof_details.json` file has been developed over multiple stages,
-first `departments.json` was scrapped, then `professor.json` was scrapped and
-the current code scrapes for `prof_details.json`. If you need to modify the
-json for earlier stages please uncomment the corresponding code, comment out
-the current code and proceede.
+Developing mcmp
+--------------------
+We love PR's. 
+Before we begin developing, a short note: 
 
-Fuzzy Search, Search Box
+* `scrapy` will scrape items written in `reverse/reverse/items.py`
+
+* find scraping logic (= rules for scraping from html dump) in `reverse/reverse/spiders/rsspiders.py`
+
+* `departments.json` contains list of all departments.
+* `prof_details.json` uses `professor.json` to populate itself. (Itself, huh? Oh yes, yes you do it. Code is just a manifestation of your brilliant mind. :D )
+
+
+Search Box on webpage
 ------------------------
 
 `makelists.py` processes `prof_details.json` and creates `finallist.json` which
-is then used to create the fuzzy search, search box on `http://metakgp.github.io/mcmp/`.
-If you want to modify the web part checkout the `gh-pages` branch.
+is then used to create the fuzzy search, search box [here](http://metakgp.github.io/mcmp/).
+If you want to modify the webpage for mcmp, checkout the `gh-pages` branch.  [More about github pages](https://pages.github.com/).
 
 
-Populating the wiki with the data from json
+Populating metakgp wiki with the data from json files
 -------------------------------------------
 
-`prof_details.json` can also be used to automatically create pages of
-Professor on metakgp. `reverse/profjson_to_wikitext.py` creates a text file
-from the json which can then be passes to
+`prof_details.json` can also be used to automatically create profile pages of
+each Professor on metakgp. `reverse/profjson_to_wikitext.py` creates a text file
+from the json which can be subsequentially passed to
 [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot) to populate the
-wiki.
+wiki pages.
