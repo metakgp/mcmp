@@ -56,13 +56,3 @@ Search Box on webpage
 `makelists.py` processes `prof_details.json` and creates `finallist.json` which
 is then used to create the fuzzy search, search box [here](http://metakgp.github.io/mcmp/).
 If you want to modify the webpage for mcmp, checkout the `gh-pages` branch.  [More about github pages](https://pages.github.com/).
-
-
-Populating metakgp wiki with the data from json files
--------------------------------------------
-
-`prof_details.json` can also be used to automatically create profile pages of
-each Professor on metakgp. `reverse/profjson_to_wikitext.py` creates a text file
-from the json which can be subsequentially passed to
-[Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot) to populate the
-wiki pages.

@@ -34,7 +34,7 @@ def query_list():
         for field in prof["field"]:
             d = {}
             d["field"] = field
-            d["link"] = prof["title"]
+            d["link"] = "https://wiki.metakgp.org/w/{}".format(prof["name"].replace(' ', '_'))
             d["name"] = prof["name"]
             finallist.append(d)
 
