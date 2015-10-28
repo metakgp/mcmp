@@ -74,7 +74,7 @@ class MySpider(Spider):
         titles = sel.xpath('//*[@id="contents"]/fieldset')
         items = []
         item = ReverseItem()
-        item["title"] = response.url
+        item["link"] = response.url
         item["field"] = titles[2].xpath('.//ul/li/text()').extract()
 
         header_txt = titles[0].xpath("string((.//table/tr/td[2]))")[0].extract()
@@ -86,4 +86,18 @@ class MySpider(Spider):
         name = str((titles[0].xpath("string((.//table/tr/td[2]//text())[1])").extract())[0])
         item["name"] = name.lstrip().rstrip()
         items.append(item)
+
+        item["image_src"] = "http://iitkgp.ac.in" + sel.xpath('//table//img/@src').extract_first()
+
+        info_items = titles[1].xpath('//td/text()').extract()
+        if "email" in info_items:
+            item["email"] = info_items[info_items.index('email')+1].strip().replace(' ', '')
+        else:
+            item["email"] = ""
+
+        if "Personal web page" in info_items:
+            item["website"] = titles[1].xpath('//td//a/@href').extract_first()
+        else:
+            item["website"] = ""
+
         return items
