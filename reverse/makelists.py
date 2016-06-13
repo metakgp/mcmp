@@ -1,5 +1,6 @@
 import pickle
 import json
+import os
 
 ### 1. Generate the department links
 def department_list():
@@ -36,10 +37,12 @@ def query_list():
             d["field"] = field
             d["link"] = "https://wiki.metakgp.org/w/{}".format(prof["name"].replace(' ', '_'))
             d["name"] = prof["name"]
-            finallist.append(d)
+            if finallist.count(d) != 1 :
+                finallist.append(d)
 
     with open('finallist.json', 'w') as outfile:
         json.dump(finallist, outfile)
+
 
 
 def main():
