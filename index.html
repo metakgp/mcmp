@@ -94,7 +94,7 @@
              function displayResults(results) {
                  var html = ''
                  for (var i = 0; i < 20; ++i) {
-                     html += '<li><a href='+results[i].link+'>' + results[i].name +'</a> | <a>' + results[i].field +'</a> <li>';
+                     html += '<li><a href="'+results[i].link+'" target="_blank">' + results[i].name +'</a> | <a>' + results[i].field +'</a> <li>';
                  }
                  $('.result-list').html(html);
              }
