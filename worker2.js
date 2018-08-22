@@ -2,7 +2,7 @@ importScripts('string_score.min.js');
 
 var data;
 
-var fields = ['name', 'field'];
+var fields = ['name', 'field', 'department'];
 
 onmessage = function(e) {
     if (e.data.type === 'data') {
@@ -13,7 +13,7 @@ onmessage = function(e) {
         var fuzz = 0.3;
         console.log('got query: ', query);
         for (var j = 0; j < data.length; ++j) {
-            data[j].score = {'name': 0, 'field': 0, 'total': 1};
+            data[j].score = {'name': 0, 'field': 0, 'department': 0, 'total': 1};
             for (var t = 0; t < terms.length; ++t) {
                 var maxTermScore = 0, maxField;
                 for (var f = 0; f < fields.length; ++f) {
