@@ -30,6 +30,8 @@ def professor_list():
 def query_list():
     with open('prof_details.json') as data_file:
         data = json.load(data_file)
+    with open('department-name-code.json') as data_file:
+        name_to_code_mapping = json.load(data_file)
     finallist = []
     for prof in data:
         for field in prof["field"]:
@@ -37,6 +39,8 @@ def query_list():
             d["field"] = field
             d["link"] = "https://wiki.metakgp.org/w/{}".format(prof["name"].replace(' ', '_'))
             d["name"] = prof["name"]
+            d["department"] = name_to_code_mapping[prof["dept"]]
+
             if finallist.count(d) != 1 :
                 finallist.append(d)
 
